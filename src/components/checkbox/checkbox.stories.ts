@@ -19,6 +19,6 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        icon: '1'
+        icon: 3
     },
 }
