@@ -62,7 +62,7 @@ button {
   background-color: var(--color-dark-500);
 }
 
-.RadioGroupItem:focus {
+.RadioGroupItem:focus-visible {
   background-color: var(--color-dark-700);
 }
 
