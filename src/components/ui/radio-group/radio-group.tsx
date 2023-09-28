@@ -19,7 +19,9 @@ export const RadioGroupCustom: FC<Props> = ({ radioGroupContent }) => (
             value={index.toString()}
             id={index.toString()}
           >
-            <RadioGroup.Indicator className={s.RadioGroupIndicator} />
+            <div className={s.RadioGroupIndicatorEmptyCircle}>
+              <RadioGroup.Indicator className={s.RadioGroupIndicator} />
+            </div>
           </RadioGroup.Item>
           <label className={s.Label} htmlFor={index.toString()}>
             <Typography className={s.typography} size={'body2'}>
