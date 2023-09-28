@@ -8,10 +8,16 @@ import { Typography } from '@/components/ui/typography'
 
 type Props = {
   radioGroupContent: string[]
+  isDisabled: boolean
 }
-export const RadioGroupCustom: FC<Props> = ({ radioGroupContent }) => (
+export const RadioGroupCustom: FC<Props> = ({ radioGroupContent, isDisabled }) => (
   <form>
-    <RadioGroup.Root className={s.RadioGroupRoot} defaultValue="default" aria-label="View density">
+    <RadioGroup.Root
+      disabled={isDisabled}
+      className={s.RadioGroupRoot}
+      defaultValue="default"
+      aria-label="View density"
+    >
       {radioGroupContent.map((el, index) => (
         <div key={index} className={s.content}>
           <RadioGroup.Item

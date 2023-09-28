@@ -17,5 +17,12 @@ type Story = StoryObj<typeof meta>
 export const RadioGroupDefault: Story = {
   args: {
     radioGroupContent: ['RadioGroup', 'RadioGroup', 'RadioGroup', 'RadioGroup', 'RadioGroup'],
+    isDisabled: false,
+  },
+}
+export const RadioGroupDisabled: Story = {
+  args: {
+    radioGroupContent: ['RadioGroup', 'RadioGroup', 'RadioGroup', 'RadioGroup', 'RadioGroup'],
+    isDisabled: true,
   },
 }
