@@ -1,0 +1,38 @@
+@mixin typography-root {
+  margin: 0;
+  padding-left: 5px;
+}
+
+.profile {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.button {
+  padding: 8px 6px !important;
+
+  &:focus:enabled {
+    border: 2px solid transparent !important;
+    border-radius: 5rem !important;
+  }
+}
+
+.itemChild {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.typography {
+  @include typography-root;
+
+  color: var(--color-light-100) !important;
+}
+
+.DropdownMenuSeparator {
+  height: 1px;
+  margin: 5px;
+  background-color: var(--color-dark-300);
+}
