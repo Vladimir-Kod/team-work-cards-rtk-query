@@ -1,0 +1,11 @@
+.root {
+  flex-shrink: 0;
+
+  background-color: var(--color-dark-700);
+  filter: drop-shadow(-1px -1px 2px rgb(0 0 0 / 10%)) drop-shadow(1px 1px 2px rgb(0 0 0 / 10%));
+  border-radius: 2px;
+
+  fill: var(--color-dark-700);
+  stroke: #313131;
+  stroke-width: 1px;
+}
