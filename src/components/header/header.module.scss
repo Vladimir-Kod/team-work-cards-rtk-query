@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 3.75rem;
+  padding: 0 8.5rem;
+
+  background-color: var(--color-dark-700);
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 9.7801rem;
+  height: 2.25rem;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+}
+
+.typography {
+  user-select: none;
+
+  margin-right: 0.875rem;
+  padding-bottom: 0.3125rem;
+
+  color: var(--color-light-100) !important;
+
+  border-bottom: 1px dashed var(--color-light-100);
+}
+
+.signInButton {
+  margin: 0;
+  padding: 0;
+  color: var(--color-light-100) !important;
+}

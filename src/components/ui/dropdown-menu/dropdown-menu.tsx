@@ -8,7 +8,7 @@ type DropdownMenuDemoType = {
   trigger?: ReactNode
   dropDownMenuElement?: ReactNode[]
 }
-export const DropdownMenuDemo: FC<DropdownMenuDemoType> = ({ dropDownMenuElement, trigger }) => {
+export const DropdownMenuCustom: FC<DropdownMenuDemoType> = ({ dropDownMenuElement, trigger }) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>

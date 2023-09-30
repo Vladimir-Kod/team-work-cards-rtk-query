@@ -2,21 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { EditIcon, Logout, PersonIcon, TrashIcon, PlayCircleIcon } from '@/assets/icons'
 import { HeaderAvatar } from '@/components/ui/avatar'
-import { DropdownMenuDemo } from '@/components/ui/dropdown-menu'
-import { ButtonForMenu } from '@/components/ui/dropdown-menu/botton-for-menu'
+import { DropdownMenuCustom } from '@/components/ui/dropdown-menu'
+import { ButtonForMenu } from '@/components/ui/dropdown-menu/button-for-menu'
 import { HeaderWithAvatarForDropDMenu } from '@/components/ui/dropdown-menu/header-with-avatar-for-dropdown-menu'
 
 const meta = {
   title: 'Components/DropdownMenuDemo',
-  component: DropdownMenuDemo,
+  component: DropdownMenuCustom,
   tags: ['autodocs'],
-  // argTypes: {
-  //   disabled: ['true', 'false'],
-  //   selectItemValue: ['HTML', 'SCC', 'React'],
-  //   placeHolderValue: ['Select-box'],
-  //   defaultValue: []
-  // },
-} satisfies Meta<typeof DropdownMenuDemo>
+} satisfies Meta<typeof DropdownMenuCustom>
 
 export default meta
 type Story = StoryObj<typeof meta>
