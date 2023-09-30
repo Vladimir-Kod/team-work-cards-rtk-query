@@ -2,16 +2,15 @@ import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 
 import s from './button.module.scss'
 
-import { Typography } from '@/components/ui/typography'
-
 export type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'link'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'link' | 'asLink'
   fullWidth?: boolean
   className?: string
   children?: ReactNode
   value?: string
   tabIndex?: number
+  isDisabled?: boolean
 } & ComponentPropsWithoutRef<T>
 
 export const Button = <T extends ElementType = 'button'>(
@@ -22,11 +21,13 @@ export const Button = <T extends ElementType = 'button'>(
     fullWidth,
     className,
     as: Component = 'button',
-    value = '',
     children = '',
-    tabIndex = 1,
+    tabIndex = 0,
+    // isDisabled,
     ...rest
   } = props
+
+  /*  const isDisabledAsLink = isDisabled ? s.isDisabledAsLink : ''*/
 
   return (
     <Component
@@ -35,9 +36,6 @@ export const Button = <T extends ElementType = 'button'>(
       {...rest}
     >
       {children}
-      <Typography className={s.typography} size={'subtitle2'}>
-        {value}
-      </Typography>
     </Component>
   )
 }

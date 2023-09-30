@@ -29,9 +29,13 @@ export const Primary: Story = {
 export const PrimaryWithIcon: Story = {
   args: {
     variant: 'primary',
-    children: <Logout />,
+    children: (
+      <>
+        <Logout />
+        <div>Secondary Button</div>
+      </>
+    ),
     disabled: false,
-    value: 'Sign out',
   },
 }
 
@@ -48,9 +52,8 @@ export const SecondaryWithIcon: Story = {
     variant: 'secondary',
     children: (
       <>
-        {' '}
         <Logout />
-        Secondary Button{' '}
+        <div>Secondary Button</div>
       </>
     ),
     disabled: false,
@@ -84,6 +87,7 @@ export const AsLink: Story = {
   args: {
     variant: 'primary',
     children: 'Link that looks like a button',
+    disabled: true,
     as: 'a',
   },
 }
