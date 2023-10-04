@@ -1,0 +1,81 @@
+.checkboxWrapper {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.checkboxHighlight {
+  position: absolute;
+  z-index: -1;
+
+  width: 2.6rem;
+  height: 2.6rem;
+
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.checkboxRoot {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  font-weight: 900;
+
+  border: 2px solid var(--color-light-900);
+  border-radius: 0.25rem;
+
+  &[data-state='checked'] {
+    border: transparent;
+  }
+
+  &[data-state='unchecked'] {
+    background-color: transparent;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible .checkboxHighlight {
+    background-color: var(--color-dark-100);
+  }
+
+  &:hover .checkboxHighlight {
+    background-color: var(--color-dark-500);
+  }
+
+  &:active .checkboxHighlight {
+    background-color: var(--color-dark-100);
+  }
+}
+
+.indicator {
+  width: 18px;
+  height: 18px;
+}
+
+.labelText {
+  cursor: pointer;
+  user-select: none;
+  color: var(--color-light-100) !important;
+  word-wrap: break-word;
+}
+
+.checkboxRoot[data-disabled] + label {
+  pointer-events: none;
+  opacity: 0.5;
+}
