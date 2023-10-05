@@ -1,0 +1,122 @@
+@mixin input-root {
+  cursor: pointer;
+
+  padding-left: 12px;
+
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
+  font-style: normal;
+  line-height: var(--line-height-m);
+
+  background-color: var(--color-dark-900);
+  border-radius: 2px;
+  outline: 2px solid transparent;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-dark-700);
+  }
+}
+
+.ContainerRoot {
+  all: unset;
+
+  user-select: none;
+
+  position: relative;
+
+  display: inline-block;
+
+  color: var(--color-dark-100);
+}
+
+.InputContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.Input {
+  @include input-root;
+
+  color: var(--color-dark-100);
+  border: 1px solid var(--color-dark-300);
+
+  &:focus-visible:not(:disabled) {
+    border: 1px solid transparent;
+    outline: 2px solid var(--color-info-700);
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:active:not(:disabled) {
+    color: var(--color-light-100);
+    border-color: var(--color-light-100);
+    outline: 2px solid transparent;
+  }
+}
+
+.InputError {
+  @include input-root;
+
+  color: var(--color-danger-300);
+  border: 1px solid var(--color-danger-300);
+
+  &::placeholder {
+    color: var(--color-danger-300);
+  }
+}
+
+.Label {
+  margin: 0;
+  color: var(--color-dark-100) !important;
+}
+
+.LabelDisabled {
+  margin: 0 !important;
+  color: var(--color-dark-100) !important;
+  opacity: 0.5;
+}
+
+.Error {
+  margin: 0;
+  color: var(--color-danger-300) !important;
+}
+
+.EyeIcon,
+.ErrorEye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.EyeIconDisabled {
+  opacity: 0.5;
+}
+
+.InputContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.WithSearchIcon {
+  padding-left: 41px;
+}
+
+.SearchIcon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%); /* Центрирование по вертикали */
+}
+
+.XIcon {
+  top: 50%;
+}
