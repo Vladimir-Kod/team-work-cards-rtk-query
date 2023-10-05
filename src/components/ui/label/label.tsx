@@ -6,8 +6,9 @@ type Props = {
   children?: ReactNode
   size?: TypographySizeType
   className?: string
+  disabled?: boolean
 }
 
-export const Label: FC<Props> = ({ size, className, ...rest }) => {
-  return <Typography className={className} size={size} {...rest} />
+export const Label: FC<Props> = ({ size, className, disabled, ...rest }) => {
+  return <Typography aria-disabled={disabled} className={className} size={size} {...rest} />
 }

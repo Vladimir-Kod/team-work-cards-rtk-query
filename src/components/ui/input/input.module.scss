@@ -36,6 +36,7 @@
 }
 
 .InputContainer {
+  cursor: pointer;
   position: relative;
   display: inline-block;
 }
@@ -76,12 +77,10 @@
 .Label {
   margin: 0;
   color: var(--color-dark-100) !important;
-}
 
-.LabelDisabled {
-  margin: 0 !important;
-  color: var(--color-dark-100) !important;
-  opacity: 0.5;
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
 }
 
 .Error {
@@ -90,20 +89,12 @@
 }
 
 .EyeIcon,
-.ErrorEye {
+.ErrorEye,
+.XIcon {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-}
-
-.EyeIconDisabled {
-  opacity: 0.5;
-}
-
-.InputContainer {
-  position: relative;
-  display: inline-block;
 }
 
 .WithSearchIcon {
@@ -115,8 +106,4 @@
   top: 50%;
   left: 12px;
   transform: translateY(-50%); /* Центрирование по вертикали */
-}
-
-.XIcon {
-  top: 50%;
 }

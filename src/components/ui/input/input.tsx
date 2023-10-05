@@ -36,19 +36,11 @@ export const Input = (props: Props) => {
 
   return (
     <div className={s.ContainerRoot}>
-      <Label size={'body2'} className={disabled ? s.LabelDisabled : s.Label}>
+      <Label disabled={disabled} size={'body2'} className={s.Label}>
         {value}
       </Label>
       <div className={s.InputContainer}>
         {search && <SearchIcon className={s.SearchIcon} />}
-        <input
-          disabled={disabled}
-          className={`${error ? s.InputError : s.Input} ${search ? s.WithSearchIcon : ''}`}
-          type={isTypePassword ? 'password' : 'text'}
-          placeholder={value}
-          onChange={handleInputChange}
-          value={inputValue}
-        />
         {inputValue && search && (
           <XIcon
             className={`${s.EyeIcon} ${disabled ? s.EyeIconDisabled : ''} ${
@@ -65,6 +57,14 @@ export const Input = (props: Props) => {
             }`}
           />
         )}
+        <input
+          disabled={disabled}
+          className={`${error ? s.InputError : s.Input} ${search ? s.WithSearchIcon : ''}`}
+          type={isTypePassword ? 'password' : 'text'}
+          placeholder={value}
+          onChange={handleInputChange}
+          value={inputValue}
+        />
       </div>
       <Label size={'overline'} className={s.Error}>
         {error}
