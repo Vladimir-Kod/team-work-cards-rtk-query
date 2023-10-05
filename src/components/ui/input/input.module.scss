@@ -89,7 +89,6 @@
 }
 
 .EyeIcon,
-.ErrorEye,
 .XIcon {
   position: absolute;
   top: 50%;
@@ -97,13 +96,13 @@
   transform: translateY(-50%);
 }
 
-.WithSearchIcon {
-  padding-left: 41px;
-}
-
 .SearchIcon {
   position: absolute;
   top: 50%;
   left: 12px;
   transform: translateY(-50%); /* Центрирование по вертикали */
+}
+
+.WithSearchIcon {
+  padding-left: 41px;
 }

@@ -41,22 +41,9 @@ export const Input = (props: Props) => {
       </Label>
       <div className={s.InputContainer}>
         {search && <SearchIcon className={s.SearchIcon} />}
-        {inputValue && search && (
-          <XIcon
-            className={`${s.EyeIcon} ${disabled ? s.EyeIconDisabled : ''} ${
-              error ? s.ErrorEye : ''
-            } ${search ? s.XIcon : ''}`}
-            onClick={handleClearInput}
-          />
-        )}
-        {password && (
-          <EyeIcon
-            onClick={changeTypePassword}
-            className={`${s.EyeIcon} ${disabled ? s.EyeIconDisabled : ''} ${
-              error ? s.ErrorEye : ''
-            }`}
-          />
-        )}
+        {inputValue && search && <XIcon className={s.XIcon} onClick={handleClearInput} />}
+        {password && <EyeIcon onClick={changeTypePassword} className={s.EyeIcon} />}
+
         <input
           disabled={disabled}
           className={`${error ? s.InputError : s.Input} ${search ? s.WithSearchIcon : ''}`}
