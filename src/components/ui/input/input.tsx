@@ -36,7 +36,7 @@ export const Input = (props: Props) => {
 
   return (
     <div className={s.ContainerRoot}>
-      <Label disabled={disabled} size={'body2'} className={s.Label}>
+      <Label areaDisabled={disabled} size={'body2'} className={s.Label}>
         {value}
       </Label>
       <div className={s.InputContainer}>
