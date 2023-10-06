@@ -1,0 +1,122 @@
+.root {
+  all: unset;
+  width: 100%;
+}
+
+.headerSelect {
+  height: 3.75rem;
+}
+
+.trigger {
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.44rem 0.75rem;
+
+  background-color: var(--color-dark-900);
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+  outline: 2px solid transparent;
+
+  &:disabled {
+    cursor: default;
+    color: var(--color-dark-300) !important;
+    border-color: var(--color-dark-300);
+
+    & svg {
+      opacity: 0.5;
+    }
+  }
+
+  &:focus-visible {
+    border: 1px solid transparent;
+    border-radius: 2px;
+    outline: 2px solid var(--color-info-700);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-dark-300);
+  }
+
+  &[data-state='open'] {
+    border-color: var(--color-dark-100) !important;
+
+    & svg {
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &[data-state='closed'] {
+    & svg {
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+}
+
+.label {
+  user-select: none;
+  margin: 1px 0;
+  color: var(--color-dark-100) !important;
+
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
+}
+
+.ArrowDownIcon {
+  display: flex;
+}
+
+.SelectContent {
+  float: left;
+  overflow: hidden;
+
+  width: var(--radix-select-trigger-width);
+
+  background-color: var(--color-dark-900);
+  border: 1px solid var(--color-dark-100);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.typography {
+  margin: 0;
+  color: var(--color-light-100) !important;
+
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+  }
+}
+
+.item {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.44rem 0.75rem;
+
+  &:focus {
+    background-color: var(--color-accent-900);
+    outline: none;
+
+    .typography {
+      color: var(--color-accent-300) !important;
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-accent-900);
+    outline: none;
+
+    .typography {
+      color: var(--color-accent-300) !important;
+    }
+  }
+}
