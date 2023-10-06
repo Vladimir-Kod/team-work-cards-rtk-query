@@ -10,5 +10,9 @@ type Props = {
 }
 
 export const Label: FC<Props> = ({ size, className, areaDisabled, ...rest }) => {
-  return <Typography aria-disabled={areaDisabled} className={className} size={size} {...rest} />
+  return (
+    <label>
+      <Typography aria-disabled={areaDisabled} className={className} size={size} {...rest} />
+    </label>
+  )
 }

@@ -1,7 +1,7 @@
 export { default as Logout } from './log-out.tsx'
 export { default as ArrowDown } from './arrow-down.tsx'
 export { default as EyeIcon } from './eye.tsx'
-export { default as CrossedEye } from './eye.tsx'
+export { default as EyeOffIcon } from './eye-off.tsx'
 export { default as SearchIcon } from './search-svg.tsx'
 export { default as XIcon } from './x-icon.tsx'
 export { default as Logo } from './logo-icon.tsx'

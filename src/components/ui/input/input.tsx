@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react'
 
 import s from './input.module.scss'
 
-import { EyeIcon, SearchIcon, XIcon } from '@/assets/icons'
+import { EyeIcon, EyeOffIcon, SearchIcon, XIcon } from '@/assets/icons'
 import { Label } from '@/components/ui/label'
 
 type Props = {
@@ -42,7 +42,12 @@ export const Input = (props: Props) => {
       <div className={s.InputContainer}>
         {search && <SearchIcon className={s.SearchIcon} />}
         {inputValue && search && <XIcon className={s.XIcon} onClick={handleClearInput} />}
-        {password && <EyeIcon onClick={changeTypePassword} className={s.EyeIcon} />}
+        {password && isTypePassword && (
+          <EyeIcon onClick={changeTypePassword} className={s.EyeIcon} />
+        )}
+        {password && !isTypePassword && (
+          <EyeOffIcon onClick={changeTypePassword} className={s.EyeIcon} />
+        )}
 
         <input
           disabled={disabled}
