@@ -19,7 +19,7 @@ export const TabsSwitcher: FC<Props> = ({ tabValue, tabContent, labelValue, disa
 
   return (
     <div className={s.root}>
-      <Label areaDisabled={disabled} size={'body2'} className={s.label}>
+      <Label ariaDisabled={disabled} size={'body2'} className={s.label}>
         {text}
       </Label>
       <Tabs.Root className="TabsRoot" defaultValue={tabValue[0]}>

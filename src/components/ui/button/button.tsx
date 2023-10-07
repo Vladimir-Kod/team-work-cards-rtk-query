@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 
 import s from './button.module.scss'
 
-export type ButtonProps<T extends ElementType = 'button'> = {
+export type ButtonProps<T extends ElementType = 'a'> = {
   as?: T
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link' | 'asLink'
   fullWidth?: boolean
