@@ -2,6 +2,7 @@ import {SliderRoot} from "@/components/ui/slider";
 import {useState} from "react";
 
 
+
 export function App() {
   const [minMaxCurrentValue, setMinMaxCurrentValue] = useState<number[]>([33, 66])
 

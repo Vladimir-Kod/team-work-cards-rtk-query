@@ -1,18 +1,20 @@
-import { FC, ReactNode } from 'react'
+import {ComponentPropsWithoutRef, FC} from 'react'
 
 import { Typography, TypographySizeType } from '@/components/ui/typography'
 
 type Props = {
-  children?: ReactNode
   size?: TypographySizeType
   className?: string
   ariaDisabled?: boolean
-}
+  value: string
+} & ComponentPropsWithoutRef<'label'>
 
-export const Label: FC<Props> = ({ size, className, ariaDisabled, ...rest }) => {
+export const Label: FC<Props> = ({ size, className, ariaDisabled, value, ...restProps }) => {
   return (
-    <label>
-      <Typography aria-disabled={ariaDisabled} className={className} size={size} {...rest} />
+    <label {...restProps}>
+      <Typography aria-disabled={ariaDisabled} className={className} size={size}>
+        {value}
+      </Typography>
     </label>
   )
 }

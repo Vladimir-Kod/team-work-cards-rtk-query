@@ -1,9 +1,11 @@
-import { ChangeEvent, useState } from 'react'
+import {ChangeEvent, ComponentPropsWithoutRef, FC, useState} from 'react'
 
 import s from './input.module.scss'
 
 import { EyeIcon, EyeOffIcon, SearchIcon, XIcon } from '@/assets/icons'
 import { Label } from '@/components/ui/label'
+
+
 
 type Props = {
   value?: string
@@ -11,10 +13,10 @@ type Props = {
   disabled?: boolean
   password?: boolean
   search?: boolean
-}
+} & ComponentPropsWithoutRef<'input'>
 
-export const Input = (props: Props) => {
-  const { value, error, disabled, password, search } = props
+
+export const Input: FC<Props> = ({value, error, disabled, password, search, ...restProps}) => {
   const [inputValue, setInputValue] = useState('')
   const [isTypePassword, setIsTypePassword] = useState(password)
 
@@ -36,17 +38,15 @@ export const Input = (props: Props) => {
 
   return (
     <div className={s.ContainerRoot}>
-      <Label ariaDisabled={disabled} size={'body2'} className={s.Label}>
-        {value}
-      </Label>
+      <Label ariaDisabled={disabled} size={'body2'} className={s.Label} value={value || ''} id={'2'}/>
       <div className={s.InputContainer}>
         {search && <SearchIcon className={s.SearchIcon} />}
         {inputValue && search && <XIcon className={s.XIcon} onClick={handleClearInput} />}
         {password && isTypePassword && (
-          <EyeIcon onClick={changeTypePassword} className={s.EyeIcon} />
+            <EyeIcon onClick={changeTypePassword} className={s.EyeIcon} />
         )}
         {password && !isTypePassword && (
-          <EyeOffIcon onClick={changeTypePassword} className={s.EyeIcon} />
+            <EyeOffIcon onClick={changeTypePassword} className={s.EyeIcon} />
         )}
 
         <input
@@ -56,11 +56,10 @@ export const Input = (props: Props) => {
           placeholder={value}
           onChange={handleInputChange}
           value={inputValue}
+          {...restProps}
         />
       </div>
-      <Label size={'overline'} className={s.Error}>
-        {error}
-      </Label>
+      <Label size={'overline'} className={s.Error} value={error || ''}/>
     </div>
   )
 }

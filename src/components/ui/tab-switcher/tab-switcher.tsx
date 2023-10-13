@@ -19,9 +19,7 @@ export const TabsSwitcher: FC<Props> = ({ tabValue, tabContent, labelValue, disa
 
   return (
     <div className={s.root}>
-      <Label ariaDisabled={disabled} size={'body2'} className={s.label}>
-        {text}
-      </Label>
+      <Label ariaDisabled={disabled} size={'body2'} className={s.label} value={text}/>
       <Tabs.Root className="TabsRoot" defaultValue={tabValue[0]}>
         <Tabs.List className="TabsList" aria-label="Manage your account">
           {tabValue?.map((el, index) => (

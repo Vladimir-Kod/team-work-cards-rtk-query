@@ -27,9 +27,7 @@ export const SelectRoot = (props: SelectType) => {
       <Select.Root onValueChange={changeCurrentValue} disabled={disabled}>
         <div className={s.headerSelect}>
           {labelValue && (
-            <Label ariaDisabled={disabled} size={'body2'} className={s.label}>
-              {labelValue}
-            </Label>
+            <Label ariaDisabled={disabled} size={'body2'} className={s.label} value={labelValue}/>
           )}
           <Select.Trigger className={s.trigger}>
             <Select.Value
