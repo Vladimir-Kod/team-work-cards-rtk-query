@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+
+  width: 420px;
+  height: 528px;
+
+  .label {
+    color: var(--color-light-100);
+  }
+
+  .typographyDontHaveAcc {
+    color: var(--color-light-900);
+  }
+
+  .typographySignUp {
+    font-weight: 700;
+    color: var(--color-accent-500);
+  }
+}
