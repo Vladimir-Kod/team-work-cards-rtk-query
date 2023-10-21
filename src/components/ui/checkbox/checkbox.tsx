@@ -5,7 +5,7 @@ import s from './checkbox.module.scss'
 import { Check } from '@/assets/icons'
 import { Typography } from '@/components/ui/typography'
 
-type CheckboxProps = {
+export type CheckboxProps = {
   id?: string
   required?: boolean
   label?: string
