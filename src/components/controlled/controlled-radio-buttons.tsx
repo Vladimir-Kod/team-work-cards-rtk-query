@@ -9,8 +9,6 @@ export const ControlledRadioGroup = <T extends FieldValues>({
   control,
   name,
   defaultValue,
-  rules,
-  shouldUnregister,
   ...rest
 }: ControlledRadioGroupProps<T>) => {
   const {
@@ -19,8 +17,6 @@ export const ControlledRadioGroup = <T extends FieldValues>({
     name,
     control,
     defaultValue,
-    rules,
-    shouldUnregister,
   })
 
   return <RadioButtons {...rest} defaultValue={defaultValue} onValueChange={onChange} id={name} />

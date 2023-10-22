@@ -5,7 +5,7 @@ import s from './input.module.scss'
 import { EyeIcon, EyeOffIcon, SearchIcon, XIcon } from '@/assets/icons'
 import { Label } from '@/components/ui/label'
 
-type Props = {
+export type InputProps = {
   onValueChange?: (value: string) => void
   onClearInput?: () => void
   value?: string
@@ -15,7 +15,7 @@ type Props = {
   search?: boolean
 } & ComponentPropsWithoutRef<'input'>
 
-export const Input = forwardRef<HTMLInputElement, Props>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       value,
