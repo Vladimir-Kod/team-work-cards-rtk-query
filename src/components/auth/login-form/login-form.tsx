@@ -43,7 +43,7 @@ export const LoginForm = () => {
           <Input value={'email'} {...register('email')} errorMessage={errors.email?.message} />
         </div>
 
-        <div>
+        <div style={{ marginTop: '10px' }}>
           <Input
             password={true}
             value={'password'}
@@ -54,7 +54,7 @@ export const LoginForm = () => {
 
         <ControlledCheckbox control={control} name={'RememberMe'} label={'Remember me'} />
 
-        <Button variant={'link'}>
+        <Button variant={'link'} type={'button'}>
           <Typography size={'body2'} className={s.label}>
             Forgot Password?
           </Typography>
