@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, RefAttributes } from 'react'
 
 import * as Tabs from '@radix-ui/react-tabs'
 
@@ -12,14 +12,15 @@ type Props = {
   tabContent: ReactNode[]
   labelValue?: string
   disabled?: boolean
-}
+} & Tabs.TabsProps &
+  RefAttributes<HTMLDivElement>
 
 export const TabsSwitcher: FC<Props> = ({ tabValue, tabContent, labelValue, disabled }) => {
   const text = labelValue !== undefined ? labelValue : ''
 
   return (
     <div className={s.root}>
-      <Label ariaDisabled={disabled} size={'body2'} className={s.label} value={text}/>
+      <Label ariaDisabled={disabled} size={'body2'} className={s.label} value={text} />
       <Tabs.Root className="TabsRoot" defaultValue={tabValue[0]}>
         <Tabs.List className="TabsList" aria-label="Manage your account">
           {tabValue?.map((el, index) => (

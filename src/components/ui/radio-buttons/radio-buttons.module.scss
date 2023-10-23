@@ -115,5 +115,6 @@ button {
 }
 
 .typography {
+  user-select: none;
   color: var(--color-light-100) !important;
 }

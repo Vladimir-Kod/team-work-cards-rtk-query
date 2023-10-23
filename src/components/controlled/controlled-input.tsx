@@ -3,10 +3,10 @@ import { useController, UseControllerProps, FieldValues } from 'react-hook-form'
 import { Input } from '@/components/ui/input'
 import { InputProps } from '@/components/ui/input/input.tsx'
 
-type ControlledInputProps<T extends FieldValues> = Pick<UseControllerProps<T>, 'control' | 'name'> &
+type ControlledInputProps<T extends FieldValues> = UseControllerProps<T> &
   Omit<InputProps, 'value' | 'onValueChange' | 'onChange' | 'id'>
 
-export const ControlledCheckbox = <T extends FieldValues>({
+export const ControlledInput = <T extends FieldValues>({
   control,
   name,
   ...rest
@@ -18,5 +18,5 @@ export const ControlledCheckbox = <T extends FieldValues>({
     control,
   })
 
-  return <Input {...rest} value={value} onValueChange={onChange} id={name} />
+  return <Input value={value} onValueChange={onChange} id={name} {...rest} />
 }

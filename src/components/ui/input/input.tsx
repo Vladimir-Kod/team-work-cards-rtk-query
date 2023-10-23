@@ -3,12 +3,12 @@ import { ChangeEvent, ComponentPropsWithoutRef, forwardRef, useState } from 'rea
 import s from './input.module.scss'
 
 import { EyeIcon, EyeOffIcon, SearchIcon, XIcon } from '@/assets/icons'
-import { Label } from '@/components/ui/label'
+import { Typography } from '@/components/ui/typography'
 
 export type InputProps = {
   onValueChange?: (value: string) => void
   onClearInput?: () => void
-  value?: string
+  labelValue?: string
   errorMessage?: string
   disabled?: boolean
   password?: boolean
@@ -18,7 +18,7 @@ export type InputProps = {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
-      value,
+      labelValue,
       errorMessage,
       disabled,
       password,
@@ -32,8 +32,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ) => {
     // const [inputValue, setInputValue] = useState('')
     const [isTypePassword, setIsTypePassword] = useState(password)
-
-    console.log(ref)
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
       onChange?.(event)
       onValueChange?.(event.target.value)
@@ -54,13 +52,18 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className={s.ContainerRoot}>
-        <Label
-          ariaDisabled={disabled}
-          size={'body2'}
-          className={s.Label}
-          value={value || ''}
-          id={'2'}
-        />
+        <div>
+          <Typography
+            aria-disabled={disabled}
+            as={'label'}
+            size={'body2'}
+            className={s.Label}
+            id={'2'}
+          >
+            {labelValue || ''}
+          </Typography>
+        </div>
+
         <div className={s.InputContainer}>
           {search && <SearchIcon className={s.SearchIcon} />}
           {search && <XIcon className={s.XIcon} onClick={handleClearInput} />}
@@ -76,13 +79,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             disabled={disabled}
             className={`${errorMessage ? s.InputError : s.Input} ${search ? s.WithSearchIcon : ''}`}
             type={isTypePassword ? 'password' : 'text'}
-            placeholder={value}
+            placeholder={labelValue}
             onChange={handleInputChange}
-            // value={inputValue}
             {...restProps}
           />
         </div>
-        <Label size={'overline'} className={s.Error} value={errorMessage || ''} />
+
+        <Typography size={'overline'} className={s.Error}>
+          {errorMessage || ''}
+        </Typography>
       </div>
     )
   }
