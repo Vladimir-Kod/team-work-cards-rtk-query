@@ -4,35 +4,28 @@ import { z } from 'zod'
 
 import { Button } from '../../../ui/button'
 
-import s from './sign-up.module.scss'
+import s from './forgot-your-password.module.scss'
 
 import { ControlledInput } from '@/components/controlled/controlled-input.tsx'
 import { Card } from '@/components/ui/card'
 import { Typography } from '@/components/ui/typography'
 
-const loginSchema = z
-  .object({
-    email: z.string().email(),
-    password: z.string().min(3),
-    confirmPassword: z.string(),
-  })
-  .refine(data => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
-    path: ['confirmPassword'],
-  })
+const loginSchema = z.object({
+  email: z.string().email(),
+})
 
-type SignUpFormValuesType = z.infer<typeof loginSchema>
+type ForgotYourPasswordType = z.infer<typeof loginSchema>
 
-export const SignUp = () => {
+export const ForgotYourPassword = () => {
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<SignUpFormValuesType>({
+  } = useForm<ForgotYourPasswordType>({
     resolver: zodResolver(loginSchema),
   })
 
-  const onSubmit = handleSubmit((data: SignUpFormValuesType) => {
+  const onSubmit = handleSubmit((data: ForgotYourPasswordType) => {
     console.log(data)
   })
 
@@ -41,8 +34,9 @@ export const SignUp = () => {
       <form onSubmit={onSubmit}>
         <div className={s.inputSpot}>
           <Typography as={'label'} size={'large'} className={s.label}>
-            Sign Up
+            Forgot your password?
           </Typography>
+
           <ControlledInput
             control={control}
             name={'email'}
@@ -50,26 +44,14 @@ export const SignUp = () => {
             labelValue={'email'}
           />
 
-          <ControlledInput
-            control={control}
-            name={'password'}
-            password={true}
-            errorMessage={errors.password?.message}
-            labelValue={'password'}
-          />
-
-          <ControlledInput
-            control={control}
-            name={'confirmPassword'}
-            password={true}
-            errorMessage={errors.confirmPassword?.message}
-            labelValue={'Confirm Password'}
-          />
+          <Typography size={'body2'} className={s.helper}>
+            Enter your email address and we will send you further instructions
+          </Typography>
         </div>
 
         <Button fullWidth={true} type="submit">
           <Typography size={'subtitle2'} className={s.label}>
-            Sign Ip
+            Send Instructions
           </Typography>
         </Button>
       </form>
@@ -77,13 +59,13 @@ export const SignUp = () => {
       <Button variant={'link'}>
         <Typography size={'body2'} className={s.typographyDontHaveAcc}>
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Already have an account?
+          Did you remember your password?
         </Typography>
       </Button>
 
       <Button variant={'link'}>
         <Typography size={'link1'} className={s.typographySignUp}>
-          Sign In
+          Try logging in
         </Typography>
       </Button>
     </Card>
