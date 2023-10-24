@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+
+  width: 420px;
+  height: 408px;
+  padding: 36px;
+
+  .helper {
+    color: var(--color-dark-100);
+    text-align: center;
+  }
+
+  .label {
+    color: var(--color-light-100);
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+}
