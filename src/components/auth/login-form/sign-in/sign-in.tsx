@@ -34,19 +34,19 @@ export const SignIn = () => {
   })
 
   return (
-    <Card className={s.root}>
-      <form onSubmit={onSubmit}>
-        <div className={s.inputSpot}>
-          <Typography as={'label'} size={'large'} className={s.label}>
-            Sign In
-          </Typography>
-          <ControlledInput
-            control={control}
-            name={'email'}
-            errorMessage={errors.email?.message}
-            labelValue={'email'}
-          />
-
+    <form onSubmit={onSubmit}>
+      <Card className={s.root}>
+        {/*<div className={s.inputSpot}>*/}
+        <Typography as={'label'} size={'large'} className={s.label}>
+          Sign In
+        </Typography>
+        <ControlledInput
+          control={control}
+          name={'email'}
+          errorMessage={errors.email?.message}
+          labelValue={'email'}
+        />
+        <div>
           <ControlledInput
             control={control}
             name={'password'}
@@ -56,53 +56,34 @@ export const SignIn = () => {
           />
 
           <ControlledCheckbox control={control} name={'RememberMe'} label={'Remember me'} />
-
-          <Button variant={'link'} type={'button'}>
-            <Typography size={'body2'} className={s.label}>
-              Forgot Password?
-            </Typography>
-          </Button>
         </div>
 
-        {/*<Label className={s.label} size={'large'} value={'Sign In'} />*/}
-        {/*<div>*/}
-        {/*  <Input labelValue={'email'} {...register('email')} errorMessage={errors.email?.message} />*/}
+        <Button variant={'link'} type={'button'}>
+          <Typography size={'body2'} className={s.labelForgotPasseord}>
+            Forgot Password?
+          </Typography>
+        </Button>
         {/*</div>*/}
-
-        {/*<div style={{ marginTop: '10px' }}>*/}
-        {/*  <Input*/}
-        {/*    password={true}*/}
-        {/*    labelValue={'password'}*/}
-        {/*    {...register('password')}*/}
-        {/*    errorMessage={errors.password?.message}*/}
-        {/*  />*/}
-        {/*</div>*/}
-
-        {/*<Button variant={'link'} type={'button'}>*/}
-        {/*  <Typography size={'body2'} className={s.label}>*/}
-        {/*    Forgot Password?*/}
-        {/*  </Typography>*/}
-        {/*</Button>*/}
 
         <Button fullWidth={true} type="submit">
           <Typography size={'subtitle2'} className={s.label}>
             Sign In
           </Typography>
         </Button>
-      </form>
 
-      <Button variant={'link'}>
-        <Typography size={'body2'} className={s.typographyDontHaveAcc}>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Don't have an account?
-        </Typography>
-      </Button>
+        <Button variant={'link'} type={'button'}>
+          <Typography size={'body2'} className={s.typographyDontHaveAcc}>
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            Don't have an account?
+          </Typography>
+        </Button>
 
-      <Button variant={'link'}>
-        <Typography size={'link1'} className={s.typographySignUp}>
-          Sign Up
-        </Typography>
-      </Button>
-    </Card>
+        <Button variant={'link'} type={'button'}>
+          <Typography size={'link1'} className={s.typographySignUp}>
+            Sign Up
+          </Typography>
+        </Button>
+      </Card>
+    </form>
   )
 }

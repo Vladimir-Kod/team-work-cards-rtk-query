@@ -37,12 +37,12 @@ export const SignUp = () => {
   })
 
   return (
-    <Card className={s.root}>
-      <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
+      <Card className={s.root}>
+        <Typography as={'label'} size={'large'} className={s.label}>
+          Sign Up
+        </Typography>
         <div className={s.inputSpot}>
-          <Typography as={'label'} size={'large'} className={s.label}>
-            Sign Up
-          </Typography>
           <ControlledInput
             control={control}
             name={'email'}
@@ -69,23 +69,23 @@ export const SignUp = () => {
 
         <Button fullWidth={true} type="submit">
           <Typography size={'subtitle2'} className={s.label}>
-            Sign Ip
+            Sign Up
           </Typography>
         </Button>
-      </form>
 
-      <Button variant={'link'}>
-        <Typography size={'body2'} className={s.typographyDontHaveAcc}>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          Already have an account?
-        </Typography>
-      </Button>
+        <Button variant={'link'} type={'button'}>
+          <Typography size={'body2'} className={s.typographyDontHaveAcc}>
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            Already have an account?
+          </Typography>
+        </Button>
 
-      <Button variant={'link'}>
-        <Typography size={'link1'} className={s.typographySignUp}>
-          Sign In
-        </Typography>
-      </Button>
-    </Card>
+        <Button variant={'link'} type={'button'}>
+          <Typography size={'link1'} className={s.typographySignUp}>
+            Sign In
+          </Typography>
+        </Button>
+      </Card>
+    </form>
   )
 }
