@@ -31,7 +31,7 @@ export const DefaultInput: Story = {
     return (
       <UseInputWithStorybook
         id={'#default'}
-        label={'Default-input'}
+        labelValue={'Default-input'}
         defaultValue={''}
         placeholder={'Default'}
       />
@@ -44,7 +44,7 @@ export const SearchInput: Story = {
     return (
       <UseInputWithStorybook
         id={'#search'}
-        label={'Search-input'}
+        labelValue={'Search-input'}
         defaultValue={''}
         placeholder={'Search'}
         leftIcon={<Search />}
@@ -59,7 +59,7 @@ export const PasswordInput: Story = {
     return (
       <UseInputWithStorybook
         id={'#password'}
-        label={'Password-input'}
+        labelValue={'Password-input'}
         defaultValue={''}
         placeholder={'Password'}
         variant={'password'}
@@ -73,7 +73,7 @@ export const ErrorInput: Story = {
     return (
       <UseInputWithStorybook
         id={'#error'}
-        label={'Error-input'}
+        labelValue={'Error-input'}
         defaultValue={''}
         placeholder={'Error'}
         error={'Error !!!!'}

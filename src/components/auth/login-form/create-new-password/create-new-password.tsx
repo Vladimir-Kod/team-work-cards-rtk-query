@@ -39,10 +39,12 @@ export const CreateNewPassword = () => {
 
         <ControlledInput
           control={control}
+          id='createNew-pass'
           name={'password'}
-          password={true}
-          errorMessage={errors.password?.message}
-          labelValue={'password'}
+          variant={'password'}
+          error={errors.password?.message}
+          labelValue={'Password'}
+          placeholder={'Enter the correct password'}
         />
 
         <Typography size={'body2'} className={s.helper}>

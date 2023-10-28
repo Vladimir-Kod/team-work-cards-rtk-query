@@ -38,9 +38,11 @@ export const ForgotYourPassword = () => {
 
         <ControlledInput
           control={control}
+          id={'forgotYour-pass'}
           name={'email'}
-          errorMessage={errors.email?.message}
-          labelValue={'email'}
+          error={errors.email?.message}
+          labelValue={'Email'}
+          placeholder={'Enter a correct email'}
         />
 
         <Typography size={'body2'} className={s.helper}>

@@ -45,25 +45,31 @@ export const SignUp = () => {
         <div className={s.inputSpot}>
           <ControlledInput
             control={control}
+            id='signUp-email'
             name={'email'}
-            errorMessage={errors.email?.message}
-            labelValue={'email'}
+            error={errors.email?.message}
+            labelValue={'Email'}
+            placeholder={'Enter a correct email'}
           />
 
           <ControlledInput
             control={control}
             name={'password'}
-            password={true}
-            errorMessage={errors.password?.message}
-            labelValue={'password'}
+            id='signUp-password'
+            variant={'password'}
+            error={errors.password?.message}
+            labelValue={'Password'}
+            placeholder={'Enter the correct password'}
           />
 
           <ControlledInput
             control={control}
+            id='signUp-confirmPass'
             name={'confirmPassword'}
-            password={true}
-            errorMessage={errors.confirmPassword?.message}
+            variant={'password'}
+            error={errors.confirmPassword?.message}
             labelValue={'Confirm Password'}
+            placeholder={'Confirm please Password'}
           />
         </div>
 

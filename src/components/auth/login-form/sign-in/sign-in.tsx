@@ -42,17 +42,21 @@ export const SignIn = () => {
         </Typography>
         <ControlledInput
           control={control}
+          id='signIn-email'
           name={'email'}
-          errorMessage={errors.email?.message}
+          error={errors.email?.message}
           labelValue={'email'}
+          placeholder={'Enter a correct email'}
         />
         <div>
           <ControlledInput
             control={control}
+            id='signIn-password'
             name={'password'}
-            password={true}
-            errorMessage={errors.password?.message}
+            variant={'password'}
+            error={errors.password?.message}
             labelValue={'password'}
+            placeholder={'Enter the correct password'}
           />
 
           <ControlledCheckbox control={control} name={'RememberMe'} label={'Remember me'} />

@@ -1,23 +1,21 @@
 import { ChangeEvent, ComponentPropsWithoutRef, FC, forwardRef, ReactNode, useState } from 'react'
 
 import { clsx } from 'clsx'
-
 import s from './textField.module.scss'
-import {Close, HidePassword, ShowPassword} from "@/assets/icons";
-
+import {Close, HidePassword, ShowPassword} from '@/assets/icons'
 
 
 export type InputProps = {
   id?: string
-  label?: string
+  labelValue?: string
   error?: string
-  variant?: 'password' | 'search' | 'text'
+  variant?: 'password' | 'search' | 'text' | 'email'
   leftIcon?: ReactNode
   onChangeText?: (value: string) => void
 } & ComponentPropsWithoutRef<'input'>
 export const TextField = forwardRef<HTMLInputElement, InputProps>(
   (
-    { id, value, label, error, variant = 'text', leftIcon, onChangeText, onChange, ...restProps },
+    { id, value, labelValue, error, variant = 'text', leftIcon, onChangeText, onChange, ...restProps },
     ref
   ) => {
     const [showPass, setShowPass] = useState(false)
@@ -54,9 +52,9 @@ export const TextField = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={classNames.root}>
         <div className={classNames.wrapper}>
-          {label && (
+          {labelValue && (
             <label htmlFor={id} className={classNames.label}>
-              {label}
+              {labelValue}
             </label>
           )}
           <div className={classNames.inputBox}>
