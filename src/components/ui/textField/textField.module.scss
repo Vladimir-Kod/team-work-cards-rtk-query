@@ -1,0 +1,183 @@
+// color dark
+$dark-light: var(--color-dark-100);
+$dark-regular: var(--color-dark-300);
+$dark-bold: var(--color-dark-700);
+
+// color light
+$light: var(--color-light-100);
+
+// color info
+$info-bold: var(--color-info-700);
+
+// color danger
+$danger-regular: var(--color-danger-300);
+
+// fontSize
+$font-size-xs: var(--font-size-xs); // 12px
+$font-size-s: var(--font-size-s); // 14px
+$font-size-m: var(--font-size-m); // 16px
+
+@mixin style-border($size, $color) {
+  border: $size solid $color;
+}
+
+@mixin font-style($size, $color) {
+  font-size: $size;
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: $color;
+}
+
+@mixin input-default {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  appearance: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.root {
+  input[type='search']::-webkit-search-cancel-button,
+  input[type='search']::-webkit-search-decoration {
+    display: none;
+  }
+}
+
+.inputBox {
+  position: relative;
+  width: 17.75rem;
+  height: 2.25rem;
+}
+
+.input {
+  @include input-default;
+
+  @include font-style($font-size-m, $dark-light);
+
+  padding: 0 0.75rem;
+  border: 0.06rem solid $dark-regular;
+  border-radius: 0.125rem;
+
+  &.active {
+    color: $light;
+    border: 0.06rem solid $light;
+  }
+
+  &.errorInput {
+    color: $danger-regular;
+    border: 0.06rem solid $danger-regular;
+
+    &::placeholder {
+      color: $danger-regular;
+    }
+  }
+
+  &.leftPadding {
+    padding-left: 2.3rem;
+  }
+
+  &.rightPadding {
+    padding-right: 2.3rem;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:hover:not(&:disabled, .active, .errorInput) {
+    background-color: $dark-bold;
+    border: 0.06rem solid $dark-light;
+  }
+
+  &:focus:not(&:disabled, .errorInput) {
+    border: transparent;
+    outline: 0.125rem solid $info-bold;
+  }
+}
+
+.label {
+  @include font-style($font-size-s, $dark-light);
+
+  cursor: pointer;
+  display: inline-block;
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.errorText {
+  @include font-style($font-size-xs, $danger-regular);
+
+  cursor: default;
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+}
+
+.leftIcon {
+  pointer-events: none;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 100%;
+
+  svg {
+    fill: $dark-light;
+  }
+
+  .input.active + & svg {
+    fill: $light;
+  }
+
+  .input.errorInput + & svg {
+    fill: $danger-regular;
+  }
+}
+
+.inputButtonWrapper {
+  position: absolute;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 100%;
+}
+
+.inputButton {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
