@@ -4,6 +4,12 @@ import { clsx } from 'clsx'
 import s from './textField.module.scss'
 import {Close, HidePassword, ShowPassword} from '@/assets/icons'
 
+interface Margin {
+  marginTop?: string
+  marginBottom?: string
+  marginLeft?: string
+  marginRight?: string
+}
 
 export type InputProps = {
   id?: string
@@ -11,11 +17,13 @@ export type InputProps = {
   error?: string
   variant?: 'password' | 'search' | 'text' | 'email'
   leftIcon?: ReactNode
+  fullWidth?: boolean
   onChangeText?: (value: string) => void
+  margin?: Margin
 } & ComponentPropsWithoutRef<'input'>
 export const TextField = forwardRef<HTMLInputElement, InputProps>(
   (
-    { id, value, labelValue, error, variant = 'text', leftIcon, onChangeText, onChange, ...restProps },
+    { id, value, labelValue, error, variant = 'text', leftIcon, fullWidth, margin, onChangeText, onChange, ...restProps },
     ref
   ) => {
     const [showPass, setShowPass] = useState(false)
@@ -23,7 +31,7 @@ export const TextField = forwardRef<HTMLInputElement, InputProps>(
     const classNames = {
       root: s.root,
       wrapper: s.wrapper,
-      inputBox: s.inputBox,
+      inputBox: clsx(s.inputBox, fullWidth && s.fullWidth,),
       input: clsx(
         s.input,
         value && s.active,
@@ -50,7 +58,7 @@ export const TextField = forwardRef<HTMLInputElement, InputProps>(
     }
 
     return (
-      <div className={classNames.root}>
+      <div className={classNames.root} style={margin}>
         <div className={classNames.wrapper}>
           {labelValue && (
             <label htmlFor={id} className={classNames.label}>
