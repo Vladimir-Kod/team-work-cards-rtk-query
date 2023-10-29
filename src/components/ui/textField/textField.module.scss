@@ -47,6 +47,8 @@ $font-size-m: var(--font-size-m); // 16px
 }
 
 .root {
+  width: 100%;
+
   input[type='search']::-webkit-search-cancel-button,
   input[type='search']::-webkit-search-decoration {
     display: none;
@@ -57,6 +59,10 @@ $font-size-m: var(--font-size-m); // 16px
   position: relative;
   width: 17.75rem;
   height: 2.25rem;
+
+  &.fullWidth {
+    width: 100%;
+  }
 }
 
 .input {

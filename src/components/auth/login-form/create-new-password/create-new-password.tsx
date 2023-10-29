@@ -31,31 +31,33 @@ export const CreateNewPassword = () => {
   })
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} style={{display: 'inline-block'}}>
       <Card className={s.root}>
-        <Typography as={'label'} size={'large'} className={s.label}>
-          Create new password
-        </Typography>
-
-        <ControlledInput
-          control={control}
-          id='createNew-pass'
-          name={'password'}
-          variant={'password'}
-          error={errors.password?.message}
-          labelValue={'Password'}
-          placeholder={'Enter the correct password'}
-        />
-
-        <Typography size={'body2'} className={s.helper}>
-          Create new password and we will send you further instructions to email
-        </Typography>
-
-        <Button fullWidth={true} type="submit">
-          <Typography size={'subtitle2'} className={s.label}>
-            Create New Password
+          <Typography as={'label'} size={'large'} className={s.label}>
+            Create new password
           </Typography>
-        </Button>
+
+          <ControlledInput
+              control={control}
+              id='createNew-pass'
+              name={'password'}
+              variant={'password'}
+              error={errors.password?.message}
+              labelValue={'Password'}
+              placeholder={'Enter the correct password'}
+              margin={{marginTop: '3.18rem', marginBottom: '1.18rem'}}
+              fullWidth={true}
+          />
+
+          <Typography size={'body2'} className={s.helper}>
+            Create new password and we will send you further instructions to email
+          </Typography>
+
+          <Button fullWidth={true} type="submit" className={s.buttonMarginTop}>
+            <Typography size={'subtitle2'} className={s.label}>
+              Create New Password
+            </Typography>
+          </Button>
       </Card>
     </form>
   )

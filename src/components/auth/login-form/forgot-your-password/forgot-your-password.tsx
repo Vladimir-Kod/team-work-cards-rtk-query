@@ -43,19 +43,21 @@ export const ForgotYourPassword = () => {
           error={errors.email?.message}
           labelValue={'Email'}
           placeholder={'Enter a correct email'}
+          margin={{marginTop: '3.18rem', marginBottom: '1.18rem'}}
+          fullWidth={true}
         />
 
         <Typography size={'body2'} className={s.helper}>
           Enter your email address and we will send you further instructions
         </Typography>
 
-        <Button fullWidth={true} type="submit">
+        <Button fullWidth={true} type="submit" style={{marginTop: '2.56rem'}}>
           <Typography size={'subtitle2'} className={s.label}>
             Send Instructions
           </Typography>
         </Button>
 
-        <Button variant={'link'} type={'button'}>
+        <Button variant={'link'} type={'button'} style={{marginTop: '1.25rem'}}>
           <Typography size={'body2'} className={s.typographyDontHaveAcc}>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Did you remember your password?

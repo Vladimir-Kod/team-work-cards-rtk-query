@@ -3,17 +3,19 @@
   flex-direction: column;
   flex-shrink: 0;
   align-items: center;
-  justify-content: space-between;
 
   width: 420px;
   height: 528px;
-  padding: 36px;
+  padding: 33px 36px 29px;
 
   .inputSpot {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
     align-items: center;
-    margin: 15px;
+
+    width: 100%;
+    margin: 1.68rem 0 3.75rem;
   }
 
   .label {

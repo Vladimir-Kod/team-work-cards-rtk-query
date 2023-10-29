@@ -50,6 +50,7 @@ export const SignUp = () => {
             error={errors.email?.message}
             labelValue={'Email'}
             placeholder={'Enter a correct email'}
+            fullWidth={true}
           />
 
           <ControlledInput
@@ -60,6 +61,7 @@ export const SignUp = () => {
             error={errors.password?.message}
             labelValue={'Password'}
             placeholder={'Enter the correct password'}
+            fullWidth={true}
           />
 
           <ControlledInput
@@ -70,6 +72,7 @@ export const SignUp = () => {
             error={errors.confirmPassword?.message}
             labelValue={'Confirm Password'}
             placeholder={'Confirm please Password'}
+            fullWidth={true}
           />
         </div>
 
@@ -79,7 +82,7 @@ export const SignUp = () => {
           </Typography>
         </Button>
 
-        <Button variant={'link'} type={'button'}>
+        <Button variant={'link'} type={'button'} style={{marginTop: '1.25rem'}}>
           <Typography size={'body2'} className={s.typographyDontHaveAcc}>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Already have an account?

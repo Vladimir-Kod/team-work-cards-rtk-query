@@ -40,36 +40,41 @@ export const SignIn = () => {
         <Typography as={'label'} size={'large'} className={s.label}>
           Sign In
         </Typography>
-        <ControlledInput
-          control={control}
-          id='signIn-email'
-          name={'email'}
-          error={errors.email?.message}
-          labelValue={'email'}
-          placeholder={'Enter a correct email'}
-        />
-        <div>
+        <div className={s.wrapperFlex}>
           <ControlledInput
-            control={control}
-            id='signIn-password'
-            name={'password'}
-            variant={'password'}
-            error={errors.password?.message}
-            labelValue={'password'}
-            placeholder={'Enter the correct password'}
+              control={control}
+              id='signIn-email'
+              name={'email'}
+              error={errors.email?.message}
+              labelValue={'email'}
+              placeholder={'Enter a correct email'}
+              fullWidth={true}
+              margin={{marginTop: '1.68rem'}}
+          />
+          <ControlledInput
+              control={control}
+              id='signIn-password'
+              name={'password'}
+              variant={'password'}
+              error={errors.password?.message}
+              labelValue={'password'}
+              placeholder={'Enter the correct password'}
+              fullWidth={true}
+              margin={{marginTop: '1.5rem'}}
           />
 
-          <ControlledCheckbox control={control} name={'RememberMe'} label={'Remember me'} />
+          <ControlledCheckbox control={control} name={'RememberMe'} label={'Remember me'} margin={{marginTop: '0.75rem'}}/>
+
+          <Button variant={'link'} type={'button'} style={{marginLeft: 'auto'}} className={s.forgotPass}>
+            <Typography size={'body2'} className={s.labelForgotPasseord}>
+              Forgot Password?
+            </Typography>
+          </Button>
         </div>
 
-        <Button variant={'link'} type={'button'}>
-          <Typography size={'body2'} className={s.labelForgotPasseord}>
-            Forgot Password?
-          </Typography>
-        </Button>
         {/*</div>*/}
 
-        <Button fullWidth={true} type="submit">
+        <Button fullWidth={true} type="submit" style={{marginTop: '4.1rem', marginBottom: '1.25rem'}}>
           <Typography size={'subtitle2'} className={s.label}>
             Sign In
           </Typography>
