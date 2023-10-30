@@ -2,7 +2,10 @@ import { useController, UseControllerProps, FieldValues } from 'react-hook-form'
 
 import {InputProps, TextField} from "@/components/ui/textField";
 
-type ControlledInputProps<T extends FieldValues> = UseControllerProps<T> & InputProps
+type ControlledInputProps<T extends FieldValues> = Pick<
+    UseControllerProps<T>,
+    'name' | 'control'
+    > & Omit<InputProps, 'onChangeText' | 'value'>
 
 export const ControlledInput = <T extends FieldValues>({
   control,
