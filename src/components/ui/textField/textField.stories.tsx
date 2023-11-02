@@ -48,7 +48,7 @@ export const SearchInput: Story = {
         defaultValue={''}
         placeholder={'Search'}
         leftIcon={<Search />}
-        variant={'search'}
+        type={'search'}
       />
     )
   },
@@ -62,7 +62,7 @@ export const PasswordInput: Story = {
         labelValue={'Password-input'}
         defaultValue={''}
         placeholder={'Password'}
-        variant={'password'}
+        type={'password'}
       />
     )
   },
